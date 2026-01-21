@@ -2,8 +2,8 @@ import { defineCollection, z } from 'astro:content';
 import { glob } from 'astro/loaders';
 
 const experienceCollection = defineCollection({
-  // Load directly from repo-level `cards/` (outside the website folder).
-  loader: glob({ pattern: 'card_ex*.md', base: '../cards' }),
+  // Load directly from repo-level `cards/`.
+  loader: glob({ pattern: 'card_ex*.md', base: './cards' }),
   schema: z.object({
     title: z.string(),
     company: z.string(),
