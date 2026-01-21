@@ -1,0 +1,65 @@
+---
+import StatusBadge from './StatusBadge.astro';
+import AskAIButton from './AskAIButton.astro';
+
+interface Props {
+  statusText?: string;
+  name?: string;
+  title?: string;
+  subtitle?: string;
+  highlights?: string[];
+}
+
+const { 
+  statusText = "Open to AI/ML Engineering roles",
+  name = "Denson Smith",
+  title = "AI Engineer",
+  subtitle = "GraphRAG, knowledge graphs, applied ML, and reliable AI systems",
+  highlights = ["GraphRAG", "NLP", "MLOps"]
+} = Astro.props;
+---
+
+<section class="min-h-screen flex flex-col justify-center px-6 md:px-12 lg:px-24 py-16">
+  <div class="max-w-4xl flex flex-col md:flex-row gap-8 items-start md:items-center">
+    <div class="flex-1">
+      <StatusBadge text={statusText} />
+      
+      <h1 class="text-6xl md:text-7xl lg:text-8xl font-bold mt-8 mb-4 tracking-tight">
+        {name}
+      </h1>
+      
+      <h2 class="text-2xl md:text-3xl font-semibold mb-4 text-gray-300">
+        {title}
+      </h2>
+      
+      <p class="text-lg md:text-xl text-gray-400 mb-8 max-w-2xl">
+        {subtitle}
+      </p>
+    
+      <div class="flex flex-wrap gap-3 mb-8">
+        {highlights.map((highlight) => (
+          <span class="px-4 py-2 rounded-full bg-gray-900 border border-gray-800 text-sm text-gray-300">
+            {highlight}
+          </span>
+        ))}
+      </div>
+      
+      <AskAIButton />
+    </div>
+    
+    <div class="flex-shrink-0 hidden md:block">
+      <img 
+        src="/Denson_recruiter_AI/profile.jpg"
+        alt={name}
+        class="w-48 h-48 rounded-full object-cover border-4 border-gray-800 shadow-xl"
+      />
+    </div>
+  </div>
+  
+  <div class="mt-24 flex flex-col items-center text-sm text-gray-500">
+    <span>SCROLL TO EXPLORE</span>
+    <svg class="w-5 h-5 mt-2 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+    </svg>
+  </div>
+</section>

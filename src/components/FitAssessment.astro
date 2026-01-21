@@ -1,0 +1,115 @@
+---
+import { fitExamples } from '../content/fitExamples';
+---
+
+<section class="px-6 md:px-12 lg:px-24 py-16 max-w-4xl mx-auto">
+  <h2 class="text-5xl md:text-6xl font-bold mb-4">Honest Fit Assessment</h2>
+  <p class="text-gray-400 text-lg mb-8 max-w-2xl">
+    Paste a job description. Get an honest assessment of whether I'm the right person—including when I'm not.
+  </p>
+  
+  <div class="flex gap-4 mb-6">
+    <button id="strong-fit-btn" class="px-6 py-3 bg-green-600 hover:bg-green-700 text-white font-semibold rounded-lg transition-colors">
+      Good Fit Example
+    </button>
+    <button id="weak-fit-btn" class="px-6 py-3 bg-gray-900 border border-gray-700 hover:border-gray-600 text-white font-semibold rounded-lg transition-colors">
+      Bad Fit Example
+    </button>
+  </div>
+  
+  <div class="bg-gray-900 border border-gray-800 rounded-lg p-6 mb-6">
+    <label class="flex items-center gap-2 text-gray-400 text-sm mb-3">
+      <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+      </svg>
+      Job description to analyze
+    </label>
+    <textarea 
+      id="job-description"
+      rows="8" 
+      class="w-full bg-transparent border-none text-gray-300 placeholder-gray-600 resize-none focus:outline-none mb-4"
+      placeholder="Paste job description here..."
+    ></textarea>
+  </div>
+
+  <div
+    id="fit-example-viewer"
+    class="hidden bg-gray-900 border border-gray-800 rounded-lg p-6 mb-6"
+    aria-live="polite"
+  >
+    <div class="flex items-start justify-between gap-4 mb-6">
+      <div>
+        <p class="text-gray-400 text-sm mb-1">Example</p>
+        <h3 id="fit-example-title" class="text-2xl font-semibold text-white"></h3>
+      </div>
+      <button
+        id="fit-example-close"
+        class="px-4 py-2 bg-gray-800 hover:bg-gray-700 text-white font-semibold rounded-lg transition-colors"
+        type="button"
+      >
+        Close
+      </button>
+    </div>
+
+    <div class="grid gap-6">
+      <div>
+        <h4 class="text-white font-semibold mb-2">Job description</h4>
+        <pre id="fit-example-job" class="text-gray-300 whitespace-pre-wrap text-sm max-h-80 overflow-auto border border-gray-800 rounded-lg p-4 bg-black/20"></pre>
+      </div>
+      <div>
+        <h4 class="text-white font-semibold mb-2">Honest fit output</h4>
+        <pre id="fit-example-output" class="text-gray-200 whitespace-pre-wrap text-sm max-h-96 overflow-auto border border-gray-800 rounded-lg p-4 bg-black/20"></pre>
+      </div>
+    </div>
+  </div>
+  
+  <div class="bg-gray-900 border border-gray-800 rounded-lg p-6 text-center">
+    <p class="text-white mb-2">This signals something completely different than "please consider my resume."</p>
+    <p class="text-white">You're qualifying them. Your time is valuable too.</p>
+  </div>
+</section>
+
+<script define:vars={{ fitExamples }}>
+  const examples = fitExamples;
+
+  const textarea = document.getElementById('job-description');
+  const strongBtn = document.getElementById('strong-fit-btn');
+  const weakBtn = document.getElementById('weak-fit-btn');
+
+  const viewer = document.getElementById('fit-example-viewer');
+  const viewerTitle = document.getElementById('fit-example-title');
+  const viewerJob = document.getElementById('fit-example-job');
+  const viewerOutput = document.getElementById('fit-example-output');
+  const viewerClose = document.getElementById('fit-example-close');
+
+  function showExample(kind) {
+    const example = examples?.[kind];
+    if (
+      !example ||
+      !(viewer instanceof HTMLElement) ||
+      !(viewerTitle instanceof HTMLElement) ||
+      !(viewerJob instanceof HTMLElement) ||
+      !(viewerOutput instanceof HTMLElement)
+    ) {
+      return;
+    }
+
+    viewerTitle.textContent = kind === 'good' ? 'Good Fit Example' : 'Bad Fit Example';
+    viewerJob.textContent = example.jobDescription ?? '';
+    viewerOutput.textContent = example.outputMarkdown ?? '';
+
+    if (textarea instanceof HTMLTextAreaElement) {
+      textarea.value = example.jobDescription ?? '';
+    }
+
+    viewer.classList.remove('hidden');
+    viewer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  strongBtn?.addEventListener('click', () => showExample('good'));
+  weakBtn?.addEventListener('click', () => showExample('bad'));
+
+  viewerClose?.addEventListener('click', () => {
+    if (viewer instanceof HTMLElement) viewer.classList.add('hidden');
+  });
+</script>

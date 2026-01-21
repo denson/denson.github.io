@@ -1,0 +1,27 @@
+@import "tailwindcss";
+
+/* Minimal styling for markdown rendered in AI context blocks */
+.ai-context-content :where(p) {
+  margin: 0.5rem 0;
+}
+
+.ai-context-content :where(ul, ol) {
+  margin: 0.5rem 0;
+  padding-left: 1.25rem;
+}
+
+.ai-context-content :where(ul) {
+  list-style: disc;
+}
+
+.ai-context-content :where(ol) {
+  list-style: decimal;
+}
+
+.ai-context-content :where(li) {
+  margin: 0.25rem 0;
+}
+
+.ai-context-content :where(strong) {
+  color: #ffffff;
+}
