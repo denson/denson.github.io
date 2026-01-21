@@ -5,8 +5,7 @@ import tailwindcss from '@tailwindcss/vite';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://YOUR_USERNAME.github.io',
-  base: '/Denson_recruiter_AI',
+  site: 'https://denson.github.io',
   vite: {
     plugins: [tailwindcss()]
   }
