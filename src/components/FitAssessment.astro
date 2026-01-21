@@ -5,7 +5,7 @@ import { fitExamples } from '../content/fitExamples';
 <section class="px-6 md:px-12 lg:px-24 py-16 max-w-4xl mx-auto">
   <h2 class="text-5xl md:text-6xl font-bold mb-4">Honest Fit Assessment</h2>
   <p class="text-gray-400 text-lg mb-8 max-w-2xl">
-    Paste a job description. Get an honest assessment of whether I'm the right person—including when I'm not.
+    This section uses a deny-by-default posture. A “Good Fit” verdict is intentionally hard-earned.
   </p>
   
   <div class="flex gap-4 mb-6">
@@ -22,14 +22,14 @@ import { fitExamples } from '../content/fitExamples';
       <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
       </svg>
-      Job description to analyze
+      Deny-by-default screen
     </label>
     <textarea 
       id="job-description"
-      rows="8" 
+      rows="4"
       class="w-full bg-transparent border-none text-gray-300 placeholder-gray-600 resize-none focus:outline-none mb-4"
-      placeholder="Paste job description here..."
-    ></textarea>
+      placeholder=""
+    >This is a **deny-by-default** assessment to save everyone time. When it says **Good Fit**, that signal is intentionally hard-earned.</textarea>
   </div>
 
   <div
@@ -82,7 +82,22 @@ import { fitExamples } from '../content/fitExamples';
   const viewerOutput = document.getElementById('fit-example-output');
   const viewerClose = document.getElementById('fit-example-close');
 
-  function showExample(kind) {
+  function setActiveButton(kind) {
+    if (strongBtn instanceof HTMLElement) {
+      strongBtn.classList.toggle('ring-2', kind === 'good');
+      strongBtn.classList.toggle('ring-offset-2', kind === 'good');
+      strongBtn.classList.toggle('ring-offset-black', kind === 'good');
+      strongBtn.setAttribute('aria-pressed', kind === 'good' ? 'true' : 'false');
+    }
+    if (weakBtn instanceof HTMLElement) {
+      weakBtn.classList.toggle('ring-2', kind === 'bad');
+      weakBtn.classList.toggle('ring-offset-2', kind === 'bad');
+      weakBtn.classList.toggle('ring-offset-black', kind === 'bad');
+      weakBtn.setAttribute('aria-pressed', kind === 'bad' ? 'true' : 'false');
+    }
+  }
+
+  function showExample(kind, options = { scroll: true }) {
     const example = examples?.[kind];
     if (
       !example ||
@@ -98,12 +113,9 @@ import { fitExamples } from '../content/fitExamples';
     viewerJob.textContent = example.jobDescription ?? '';
     viewerOutput.textContent = example.outputMarkdown ?? '';
 
-    if (textarea instanceof HTMLTextAreaElement) {
-      textarea.value = example.jobDescription ?? '';
-    }
-
     viewer.classList.remove('hidden');
-    viewer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    setActiveButton(kind);
+    if (options?.scroll) viewer.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 
   strongBtn?.addEventListener('click', () => showExample('good'));
@@ -112,4 +124,7 @@ import { fitExamples } from '../content/fitExamples';
   viewerClose?.addEventListener('click', () => {
     if (viewer instanceof HTMLElement) viewer.classList.add('hidden');
   });
+
+  // Default: start with Bad Fit selected, without scrolling on load.
+  showExample('bad', { scroll: false });
 </script>
