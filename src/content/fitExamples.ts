@@ -16,7 +16,7 @@ We are seeking an AI / LLM Agent Engineer to design, build, and deploy productio
 
 This is a hands-on role with significant technical ownership and direct influence over our core technology.
 
-What You’ll Do
+What You'll Do
 Agent Design: Implement LLM-based agents capable of reasoning, planning, tool use, and multi-step execution.
 
 System Architecture: Build and maintain agent frameworks, including both single-agent and multi-agent systems.
@@ -27,7 +27,7 @@ Optimization: Implement evaluation, monitoring, and feedback loops to continuous
 
 Scale: Optimize systems for latency, accuracy, reliability, and cost across various models and providers.
 
-What We’re Looking For
+What We're Looking For
 LLM Expertise: Strong experience building with leading models (e.g., OpenAI, Anthropic, Gemini, or open-source alternatives).
 
 Engineering Foundation: Proficiency in Python (TypeScript is a plus) with production-grade software engineering practices.
@@ -75,93 +75,164 @@ Innovation: Help define the standards for how AI agents operate in production en
 
 ## Relevant evidence (grounded in provided materials)
 
-* **Production LLM / agent systems:** Architected and deployed a GraphRAG-based agentic system (“Knowledge Crystal”) with tool execution, provenance, confidence tracking, and human-in-the-loop review—well beyond simple prompt wrappers.
+* **Production LLM / agent systems:** Architected and deployed a GraphRAG-based agentic system ("Knowledge Crystal") with tool execution, provenance, confidence tracking, and human-in-the-loop review—well beyond simple prompt wrappers.
 * **Agent architectures & workflows:** Designed multi-step, iterative agent workflows with separation of orchestration vs. domain knowledge, strict vs. inferred claims, and validation gates—directly aligned with reasoning, planning, and tool use.
 * **LLM ecosystem experience:** Hands-on work with OpenAI-class models and other frontier models, including cost/latency tradeoffs, iterative passes, and model selection for reliability.
 * **Engineering foundation:** Extensive Python ownership across ML systems, data pipelines, distributed workflows, and production deployments; TypeScript/JS used where appropriate for demos and tooling.
 * **RAG, embeddings, vector search:** Deep experience with embeddings, vector databases, similarity search, clustering, and retrieval-augmented generation across multiple domains.
-* **Evaluation, monitoring, optimization:** Built explicit evaluation loops, drift monitoring, confidence/uncertainty handling, and retraining or iteration triggers—matching the JD’s emphasis on real-world optimization.
+* **Evaluation, monitoring, optimization:** Built explicit evaluation loops, drift monitoring, confidence/uncertainty handling, and retraining or iteration triggers—matching the JD's emphasis on real-world optimization.
 * **Unstructured data:** Proven work ingesting and reasoning over large, messy corpora (documents, transcripts, scientific text), including PDFs and technical material.
 
 ---
 
 ## Overall assessment
 
-This role closely matches Denson’s demonstrated strengths: end-to-end ownership of agentic AI systems, strong software engineering discipline, practical LLM reliability work, and experience shipping real products rather than experimental demos. The evidence supports a **Qualified** screening outcome.`,
+This role closely matches Denson's demonstrated strengths: end-to-end ownership of agentic AI systems, strong software engineering discipline, practical LLM reliability work, and experience shipping real products rather than experimental demos. The evidence supports a **Qualified** screening outcome.`,
   },
   bad: {
-    jobDescription: `About the Job
-About the Company
-We are a mission-driven financial technology company dedicated to growing the small business economy. We handle the complexities of business operations—including payroll, health insurance, 401(k)s, and HR—so owners can focus on their craft and customers. With major hubs across North America, we are proud to support more than 400,000 small businesses, building a workplace that represents and celebrates the diverse customers we serve.
+    jobDescription: `## About the Role
 
-About The Role
-Our AI/ML Engineering team leverages a rich dataset to guide product direction and decision-making by building scalable solutions. We're looking for a Senior Technical Leader (Individual Contributor) who will design robust AI/ML systems and services through close partnership with seasoned leaders across Engineering, Product, Design, Data Science, Marketing, and Customer Excellence. In this role, you will define strategy while shipping impactful models and services to evolve our AI/ML capabilities and practices.
+**Job Title:** Software Technical Lead / Architect – SaaS
+**Location:** Santa Clara, CA
+**Reports To:** Director of Software Engineering
 
-Open Roles Across Two Embedded Areas
-Unified Service Platform: Optimizes the customer experience, creates personalized engagement, and drives automated or AI-enhanced assistance. We develop AI tools and platform components (e.g., embedding algorithms) to improve performance and satisfaction.
+### Role Overview
 
-Growth: Builds AI/ML-powered experiences that drive relevant, timely product adoption. Our team enables contextual customer interactions through growth-oriented capabilities like propensity modeling and recommendations.
+We are seeking a highly skilled **Software Technical Lead / Architect** to drive the technical design, modernization, and cloud transformation of core legacy enterprise applications. You will play a key architectural role in re-engineering a complex, homegrown system into a secure, scalable, cloud-native SaaS platform on **Microsoft Azure**.
 
-Compensation & Location
-Targeted Cash Compensation:
+In this high-impact role, you will collaborate closely with engineering managers, product leaders, DevOps, cybersecurity, and business stakeholders across multiple functional domains. You will provide technical direction, design patterns, and hands-on architectural leadership for a large-scale digital transformation initiative.
 
-San Francisco, New York, and Seattle: $230k–$280k
-
-Los Angeles: $205k–$255k
-
-Denver: $185k–$234k
-
-Toronto: $200k–$250k CAD
-
-Final offer amounts are determined by multiple factors including candidate experience and expertise.
-
-Work Environment: The company maintains physical office spaces in Denver, San Francisco, and New York City. Employees in these locations are expected to work from the office on designated days (approximately 2–3 days per week). For roles approved for remote work, a secure and reliable internet connection is required.
-
-Diversity & Inclusion
-Our customers come from all walks of life and so do we. We hire great people from a wide variety of backgrounds because it makes our company stronger. If you share our values and our enthusiasm for supporting small businesses, you will find a home here.
-
-We are an equal opportunity employer and do not discriminate based on race, color, religion, national origin, age, sex, disability, or any other protected characteristic. We are committed to providing reasonable accommodations for qualified individuals during the application process.`,
-    outputMarkdown: `**Verdict: Adjacent — strong applied ML/AI leadership signals, but the JD’s senior IC “technical leader” scope for production AI/ML systems is only partially proven from the provided materials.**
+This role requires deep expertise in modern application architecture, distributed systems, Azure cloud services, microservices, and secure API design—along with the ability to guide teams through legacy-to-cloud migration.
 
 ---
 
-## Blocking requirements (explicit)
+## Key Responsibilities
 
-* **End-to-end ownership of production AI/ML systems at senior IC scope** — **Not proven.**
-  The materials demonstrate multiple production-adjacent systems (NLP pipelines, CV workflows, decision systems, GraphRAG architecture), but do not explicitly establish senior-IC-level ownership of *large-scale, continuously operated AI/ML services* comparable to a fintech platform’s core ML stack.
+### Architecture & Technical Leadership
 
-* **Direct alignment with fintech / growth / personalization use cases** — **Not proven.**
-  The experience spans insurance, enterprise NLP, CV, scientific ML, and GraphRAG reliability; explicit fintech growth, recommendations, or propensity modeling in a customer-facing product is not stated.
+* Own end-to-end architecture (data and software) for legacy modernization, cloud migration, and database redesign.
+* Define and implement API-first, microservices-based architectures on Azure using App Services, AKS, Azure Functions, and API Management.
+* Decompose monolithic .NET applications into domain-driven, modular services; guide teams on modernization patterns (e.g., strangler fig, DDD).
+* Establish architectural guardrails, reference architectures, design patterns, and technical standards.
+* Design and champion enterprise-wide AI enablement strategies, including governance frameworks, best practices, and shared platforms for responsible ML adoption.
+
+### Hands-On Technical Design & Development
+
+* Produce high-quality architecture artifacts: sequence diagrams, service contracts, API definitions, data models, and deployment patterns.
+* Review technical designs, pull requests, and solution approaches for scalability, security, and correctness; identify risks and guide mitigation.
+* Lead modernization efforts from IIS-based deployments to NGINX and containerized platforms (Docker, Kubernetes).
+* Implement secure, token-based authentication (OAuth 2.0, OIDC, SAML 2.0, Entra ID/AD) and policy-driven API security.
+
+### Legacy Application Modernization
+
+* Partner with subject-matter experts and engineering teams to stabilize and evolve legacy .NET systems during transition phases.
+* Define migration paths for application modules, schemas, integrations, and reporting platforms (e.g., SQL Server → PostgreSQL).
+* Ensure zero or minimal downtime through incremental cutovers, parallel runs, and rollback strategies.
+
+### Cloud, DevOps, and Operational Excellence
+
+* Collaborate with DevOps to design CI/CD pipelines, infrastructure-as-code (Terraform/Bicep/ARM), blue-green and canary deployments.
+* Define performance, scalability, and security requirements; implement observability using modern monitoring and eventing platforms.
+* Drive improvements in engineering KPIs: code quality, test automation, deployment frequency, reliability, and architectural compliance.
+
+### Cross-Functional Collaboration
+
+* Partner with product, engineering, cybersecurity, infrastructure, QA, and business stakeholders.
+* Translate business requirements into technical designs that balance performance, security, and maintainability.
+* Provide technical oversight for third-party integrations and enterprise workflows.
+
+### Technical Mentorship & Governance
+
+* Mentor developers and junior architects on cloud-native design, distributed systems, and secure coding practices.
+* Define and enforce coding standards, architectural guidelines, and security best practices across teams.
+* Lead technical reviews, deep dives, demos, and knowledge-sharing sessions to promote engineering excellence.
 
 ---
 
-## Likely blockers (role-class heuristics)
+## Technical Skills & Experience
 
-* **Enterprise Applied ML / AI Platform Leader:**
-  The role implies long-lived model services, org-wide ML practices, and tight coupling to product growth metrics. Evidence shows strong system design and reliability thinking, but limited explicit proof of owning ML platforms embedded in revenue-driving fintech products.
-
----
-
-## Relevant evidence (supported strengths)
-
-* **Applied ML systems shipped:** Production NLP pipelines at an enterprise SaaS company (Genesys), including embeddings, clustering, ETL, governance, and drift monitoring.
-* **Decision-focused ML:** Patented cost-sensitive decisioning system for early total-loss settlement, emphasizing asymmetric costs, uncertainty, monitoring, and human-in-the-loop workflows.
-* **AI reliability & architecture:** Designed and implemented a GraphRAG (“Knowledge Crystal”) system with provenance, confidence triangulation, human review gates, and guardrails against hallucination.
-* **Embeddings-first workflows:** Demonstrated cross-domain embedding use (NLP transcripts, scientific spectra) for clustering, discovery, and similarity search without retraining.
-* **Senior technical judgment:** Recurrent theme of uncertainty handling, monitoring, and operational tradeoffs rather than model-only optimization.
+* Deep hands-on experience with Azure services: App Services, AKS, Functions, API Management, Key Vault, Azure SQL/PostgreSQL.
+* Proven success modernizing legacy .NET systems into cloud-native microservices.
+* Strong expertise in RESTful API design, schema evolution, event-driven systems, and distributed architectures.
+* Proficiency with NGINX, Docker, Kubernetes, and large-scale service deployments.
+* Strong database skills (SQL Server, PostgreSQL), including performance tuning and data modeling.
+* Experience modernizing frontends using React, Angular, or Vue.
+* Infrastructure-as-code and CI/CD experience (Terraform, Bicep, ARM, GitHub Actions, Azure DevOps).
+* Strong understanding of security standards: OAuth 2.0, OIDC, SAML, identity integration, and API policy enforcement.
+* Experience with automated testing (unit, integration, API, performance).
 
 ---
 
-## Better-matching role directions (if Adjacent)
+## Soft Skills & Leadership Attributes
 
-* **Senior Applied ML Engineer / Staff ML Engineer** focused on NLP, embeddings, decision systems, and reliability.
-* **AI Platform / ML Systems Engineer** emphasizing governance, monitoring, human-in-the-loop design, and trust.
-* **LLM / RAG Reliability Engineer** owning evaluation, provenance, and production guardrails.
-* **Principal Data Scientist (Decision Systems)** in cost-sensitive or risk-aware domains.
+* Excellent communication skills with the ability to explain complex technical concepts to technical and non-technical audiences.
+* Collaborative mindset and experience working with globally distributed teams.
+* High ownership, structured thinking, and strong problem-solving skills.
+* Ability to drive clarity in ambiguity and lead technical decision-making.
 
 ---
 
-*This assessment follows a deny-by-default screening posture: strengths are clear and substantial, but explicit proof of senior-IC ownership of fintech growth/personalization ML platforms is not established in the provided materials.*`,
+## Minimum Qualifications
+
+* Bachelor's or Master's degree in Computer Science, Engineering, or related field.
+* 10+ years of software engineering experience, including 3+ years in an architectural or technical leadership role.
+* Experience with real-time or large-scale distributed systems strongly preferred.
+* Experience building KPI dashboards using BI tools a plus.
+* Proven ability to engage effectively with both executives and engineering teams.
+
+---
+
+## Success Measures
+
+* Delivery of secure, scalable, well-architected microservices on Azure.
+* Successful incremental migration of legacy systems with minimal production disruption.
+* Measurable improvements in engineering velocity, reliability, and observability.
+* Strong technical alignment across engineering, DevOps, security, and business stakeholders.
+* Creation of reusable architectural patterns and reference components that accelerate delivery.
+
+---
+
+## Why This Role
+
+This is an opportunity to lead a large-scale, high-impact platform transformation using modern cloud and architectural practices. You'll have the autonomy to shape technical direction, influence engineering culture, and build foundational systems that support long-term growth and innovation.`,
+    outputMarkdown: `**Verdict: Not Qualified — the provided materials do not prove core hard requirements for a .NET/Azure SaaS Technical Lead/Architect role (Azure-first architecture ownership, legacy .NET modernization, and long-term hands-on SWE leadership).**
+
+---
+
+### Blocking requirements (explicit)
+
+* **Deep hands-on Azure architecture (App Services, AKS, Functions, API Management, Azure SQL/PostgreSQL)** — **Not proven**
+  The materials describe AWS (SageMaker), Snowflake, GraphRAG platforms, and applied ML systems, but do not document hands-on Azure platform ownership or delivery.
+
+* **Modernization of legacy .NET enterprise systems into cloud-native microservices** — **Not proven**
+  No evidence of leading IIS/.NET monolith decomposition, DDD-based service extraction, or .NET-to-Azure migration.
+
+* **10+ years of software engineering with 3+ years in an architectural/technical lead role for SaaS platforms** — **Not proven as specified**
+  While there is extensive applied ML/DS experience and system design, the materials do not establish senior SWE/architect tenure in SaaS application platforms (as opposed to analytics/ML systems).
+
+* **Hands-on leadership in .NET, NGINX, Docker/Kubernetes for enterprise app delivery** — **Not proven**
+  Containerization and orchestration are discussed in ML/infra contexts, not in .NET SaaS application delivery.
+
+---
+
+### Likely blockers (role-class heuristics)
+
+* **Platform SWE vs. Applied ML orientation** — This role is a platform/application architect centered on .NET and Azure SaaS modernization; the provided materials consistently position Denson as an applied ML / data systems engineer with adjacent infrastructure exposure rather than a primary application platform architect.
+
+---
+
+### Relevant evidence (strengths, but non-blocking)
+
+* Proven **large-scale system design and reliability discipline** (monitoring, drift, human-in-the-loop, governance) across enterprise environments.
+* Experience leading **complex, multi-stakeholder technical initiatives** and translating business constraints into engineered systems.
+* Strong background in **distributed systems concepts**, uncertainty handling, and production pipelines—transferable at a principles level, but not sufficient to meet the explicit Azure/.NET SaaS requirements.
+
+---
+
+### Better-matching role directions (adjacent)
+
+* **Principal / Staff Applied ML Engineer or AI Architect** (enterprise platforms, governance, reliability).
+* **LLM / RAG Architect or AI Platform Engineer** (knowledge systems, validation-first AI).
+* **Data/ML Platform Architect** (pipelines, monitoring, decision systems) rather than application SaaS architecture.`,
   },
 };
-
